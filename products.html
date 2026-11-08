@@ -39,64 +39,19 @@
             </div>
         </section>
 
-        <!-- Products Grid -->
+        <!-- Interactive product catalog -->
         <section class="section">
             <div class="container">
                 <h2 class="text-center mb-4">Featured Products</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="product-card">
-                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80" alt="iPhone 15">
-                            <h3>iPhone 15</h3>
-                            <p>Latest Apple smartphone with A16 chip</p>
-                            <p class="price">$799</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product-card">
-                            <span class="sale-badge">SALE</span>
-                            <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500&q=80" alt="Samsung Galaxy S24">
-                            <h3>Samsung Galaxy S24</h3>
-                            <p>Powerful Android phone with AI features</p>
-                            <p class="price">$699</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product-card">
-                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80" alt="MacBook Air">
-                            <h3>MacBook Air M3</h3>
-                            <p>Ultra-thin laptop with Apple M3 chip</p>
-                            <p class="price">$1099</p>
-                        </div>
-                    </div>
+                <div class="catalog-tools row g-2 align-items-end mb-4">
+                    <div class="col-md-5"><label class="form-label" for="product-search">Search products</label><input id="product-search" class="form-control" type="search" placeholder="For example, phone"></div>
+                    <div class="col-md-3"><label class="form-label" for="category-filter">Category</label><select id="category-filter" class="form-select"><option value="all">All categories</option><option value="Phones">Phones</option><option value="Computers">Computers</option><option value="Audio">Audio</option><option value="Tablets">Tablets</option><option value="Wearables">Wearables</option></select></div>
+                    <div class="col-md-2"><label class="form-label" for="sort-products">Sort by</label><select id="sort-products" class="form-select"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></div>
+                    <div class="col-md-2"><button id="favorites-filter" class="btn btn-outline-primary w-100" type="button" aria-pressed="false">♡ Favorites <span id="favorite-count">0</span></button></div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="product-card">
-                            <img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=500&q=80" alt="AirPods Pro">
-                            <h3>AirPods Pro 2</h3>
-                            <p>Wireless earbuds with noise cancellation</p>
-                            <p class="price">$249</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product-card">
-                            <span class="sale-badge">SALE</span>
-                            <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80" alt="iPad Air">
-                            <h3>iPad Air</h3>
-                            <p>Versatile tablet for work and play</p>
-                            <p class="price">$599</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="product-card">
-                            <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500&q=80" alt="Apple Watch">
-                            <h3>Apple Watch SE</h3>
-                            <p>Smartwatch with health tracking</p>
-                            <p class="price">$249</p>
-                        </div>
-                    </div>
-                </div>
+                <p id="catalog-status" class="text-muted" aria-live="polite"></p>
+                <div id="product-list" class="row" aria-live="polite"></div>
+                <section class="cart-panel mt-4" aria-labelledby="cart-title"><h3 id="cart-title">Your cart <span class="badge text-bg-primary" id="cart-count">0</span></h3><ul id="cart-items" class="list-group"></ul><p id="cart-total" class="fw-bold mt-2">Total: $0</p></section>
             </div>
         </section>
 
@@ -166,5 +121,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

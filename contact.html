@@ -46,30 +46,40 @@
                     <div class="col-md-7">
                         <h2 class="mb-3">Send Us a Message</h2>
                         <form id="contact-form">
-                            <div class="mb-3">
+                            <div class="mb-3 field-wrap">
                                 <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" required>
+                                <input type="text" class="form-control" id="name" autocomplete="name" aria-describedby="name-error">
+                                <small class="field-error" id="name-error"></small>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 field-wrap">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email" autocomplete="email" aria-describedby="email-error">
+                                <small class="field-error" id="email-error"></small>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 field-wrap">
                                 <label for="subject" class="form-label">Subject</label>
-                                <select class="form-select" id="subject">
-                                    <option selected>Choose a topic...</option>
+                                <select class="form-select" id="subject" aria-describedby="subject-error">
+                                    <option value="">Choose a topic...</option>
                                     <option>General Question</option>
                                     <option>Order Issue</option>
                                     <option>Product Inquiry</option>
                                     <option>Returns</option>
                                 </select>
+                                <small class="field-error" id="subject-error"></small>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 field-wrap">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <textarea class="form-control" id="message" rows="5" aria-describedby="message-error"></textarea>
+                                <small class="field-error" id="message-error"></small>
+                                <small id="message-counter" class="text-muted">0 / 20 characters minimum</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Send Message</button>
+                            <p id="form-success" class="alert alert-success mt-3" role="status" hidden></p>
                         </form>
+                    </div>
+                    <div class="col-md-5 mt-4">
+                        <button class="btn btn-outline-secondary jquery-help-toggle" type="button" aria-expanded="false" aria-controls="contact-help">Contact form help</button>
+                        <div id="contact-help" class="jquery-help mt-2" hidden><p>Choose the topic that best matches your question. Include your order number when asking about an existing order.</p></div>
                     </div>
                     <div class="col-md-5">
                         <h2 class="mb-3">Contact Info</h2>
@@ -92,5 +102,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
